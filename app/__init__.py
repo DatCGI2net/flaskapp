@@ -45,7 +45,7 @@ if not app.debug:
     file_handler.setFormatter(fmt)
     file_handler.setLevel(logging.ERROR)
     app.logger.addHandler(file_handler)
-    app.logger.info('microblo setartup')
+    app.logger.info('microblog setartup')
     
 
 from app import views, models
