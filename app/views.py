@@ -9,7 +9,17 @@ from flask_login.utils import login_user, current_user, login_required,\
 from app.oauth import OAuthSignIn
 import flask
 from datetime import date, datetime
+from config import DATABASE_QUERY_TIMEOUT
+from flask_sqlalchemy import get_debug_queries
 
+
+@app.after_request
+def after_request(res):
+    for query in get_debug_queries():
+        if query.duration > DATABASE_QUERY_TIMEOUT:
+            app.logger.warning("SLOW QUERY: %s\nParameters: %s\nDuration: %fs\nContext: %s\n" % \
+                               (query.statement, query.parameters, query.duration, query.context))
+    return res
 
 @app.route('/user/<nickname>')
 def user(nickname):

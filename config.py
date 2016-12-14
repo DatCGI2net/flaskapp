@@ -33,3 +33,8 @@ MAIL_PASSWORD = None
 
 # administrator list
 ADMINS = ['dat@cgito.com']
+
+SQLALCHEMY_RECORD_QUERIES = True
+
+# slow database query threshold (in seconds)
+DATABASE_QUERY_TIMEOUT = 0.5
