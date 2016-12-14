@@ -1,0 +1,213 @@
+2016-12-14 20:50:33,664 ERROR: Exception on /edit [POST] [in F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace-neol\flaskapp\app\views.py", line 97, in edit
+    db.session.commit()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 874, in commit
+    self.transaction.commit()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2137, in flush
+    self._flush(objects)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2257, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2221, in _flush
+    flush_context.execute()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 548, in execute
+    uow
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 737, in _emit_update_statements
+    execute(statement, multiparams)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\default.py", line 469, in do_execute
+    cursor.execute(statement, parameters)
+IntegrityError: (sqlite3.IntegrityError) column nickname is not unique [SQL: u'UPDATE user SET nickname=?, about_me=? WHERE user.id = ?'] [parameters: (u'Dat', u'Teaching myself about flask', 2)]
+2016-12-14 20:50:48,144 ERROR: Exception on /edit [POST] [in F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace-neol\flaskapp\app\views.py", line 97, in edit
+    db.session.commit()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 874, in commit
+    self.transaction.commit()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2137, in flush
+    self._flush(objects)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2257, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2221, in _flush
+    flush_context.execute()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 548, in execute
+    uow
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 737, in _emit_update_statements
+    execute(statement, multiparams)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\default.py", line 469, in do_execute
+    cursor.execute(statement, parameters)
+IntegrityError: (sqlite3.IntegrityError) column nickname is not unique [SQL: u'UPDATE user SET nickname=?, about_me=? WHERE user.id = ?'] [parameters: (u'Dat', u'Teaching myself about flask', 2)]
+2016-12-14 20:56:56,381 ERROR: Exception on /edit [POST] [in F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace-neol\flaskapp\app\views.py", line 97, in edit
+    db.session.commit()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 874, in commit
+    self.transaction.commit()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 461, in commit
+    self._prepare_impl()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2137, in flush
+    self._flush(objects)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2257, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\session.py", line 2221, in _flush
+    flush_context.execute()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 548, in execute
+    uow
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 737, in _emit_update_statements
+    execute(statement, multiparams)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\sqlalchemy\engine\default.py", line 469, in do_execute
+    cursor.execute(statement, parameters)
+IntegrityError: (sqlite3.IntegrityError) column nickname is not unique [SQL: u'UPDATE user SET nickname=?, about_me=? WHERE user.id = ?'] [parameters: (u'Dat', u'Teaching myself about flask', 2)]
+2016-12-14 20:57:49,309 ERROR: Exception on /edit [POST] [in F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace-neol\flaskapp\app\views.py", line 92, in edit
+    if form.validate_on_submit():
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask_wtf\form.py", line 161, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "F:\Users\Mr Dat\workspace-neol\flaskapp\app\forms.py", line 28, in validate
+    if self.nickname.data == self.original_nickname:
+AttributeError: 'EditForm' object has no attribute 'original_nickname'
+2016-12-14 21:00:54,655 ERROR: Exception on /edit [POST] [in F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\Users\Mr Dat\workspace-neol\flaskapp\app\views.py", line 92, in edit
+    if form.validate_on_submit():
+  File "F:\Users\Mr Dat\workspace\flask\lib\site-packages\flask_wtf\form.py", line 161, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "F:\Users\Mr Dat\workspace-neol\flaskapp\app\forms.py", line 35, in validate
+    user = User.query.filter_by(nickname=self.nickname.data).first()
+NameError: global name 'User' is not defined
