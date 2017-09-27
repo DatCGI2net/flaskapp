@@ -12,6 +12,51 @@ from datetime import date, datetime
 from config import DATABASE_QUERY_TIMEOUT
 from flask_sqlalchemy import get_debug_queries
 
+def bad_request(str_err):
+    print(str_err)
+    
+
+@app.route('/api/a/scene', methods=['POST'])
+def create_scene():
+    content = request.get_json(force=True)
+    #owner_id = current_identity.id
+    required_keys = [u'name', u'bulbs'] # We Need Name and bulb_id to Create a Scene
+    if not set(required_keys) <= set(content.keys()):
+        return bad_request("Missing \"name\", \"bulb_id\" in your Request")
+    if "bulbs" not in content or not content['bulbs']:
+        return bad_request("A Scene Must Have Atleast one Bulb")
+    
+    bulbs = []
+    
+    ##print('bulbs:', content['bulbs'])
+    ##return content['bulbs']
+    
+    
+    
+    for b in content['bulbs']:
+        
+        print('b:',b)
+        """
+        bulb = Bulb.query.get(b['id'])
+        if not bulb:
+            return bad_request("no bulb #" + b['id'])
+        if bulb.owner_id is not owner_id:
+            return bad_request("User doesn't have permission on bulb #" + b)
+        
+        if b.get('brightness'):
+            bulb.brightness = b.get('brightness') # Setting brightness & Color
+        if b.get('brightness'):
+            bulb.color = b.get('color')
+        db.session.add(bulb)
+        bulbs.append(bulb)
+        scene = Scene(name=content['name'], owner_id=owner_id, bulbs=bulbs)
+        db.session.add(scene)
+        db.session.commit()
+        """
+        
+    ##return created(scene)
+    
+    return "OK"
 
 @app.after_request
 def after_request(res):
